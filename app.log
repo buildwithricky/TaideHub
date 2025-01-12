@@ -1,0 +1,955 @@
+2025-01-12 09:57:14,769 - INFO - Received request to generate slides for topic: computer networks
+2025-01-12 09:57:14,770 - INFO - Generating presentation content for topic: computer networks
+2025-01-12 09:57:14,770 - INFO - Making API call to OpenAI
+2025-01-12 09:57:15,092 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-01-12 09:57:15,093 - INFO - Retrying request to /chat/completions in 0.840909 seconds
+2025-01-12 09:57:16,122 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-01-12 09:57:16,123 - INFO - Retrying request to /chat/completions in 1.503940 seconds
+2025-01-12 09:57:17,831 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-01-12 09:57:17,833 - ERROR - Error in generate_presentation_content: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2025-01-12 09:57:17,838 - ERROR - Full traceback: Traceback (most recent call last):
+  File "C:\Users\outcast_tremble\Desktop\ai-tools\tlx\backend\main.py", line 60, in generate_presentation_content
+    response = await asyncio.wait_for(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\Desktop\ai-tools\tlx\backend\main.py", line 63, in <lambda>
+    lambda: client.chat.completions.create(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\openai\_utils\_utils.py", line 301, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\openai\resources\chat\completions.py", line 598, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 1096, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 856, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 894, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 966, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 894, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 966, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 908, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+
+2025-01-12 09:57:17,838 - ERROR - Error in generate_slides endpoint: 
+2025-01-12 09:57:17,839 - ERROR - Full traceback: Traceback (most recent call last):
+  File "C:\Users\outcast_tremble\Desktop\ai-tools\tlx\backend\main.py", line 60, in generate_presentation_content
+    response = await asyncio.wait_for(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\Desktop\ai-tools\tlx\backend\main.py", line 63, in <lambda>
+    lambda: client.chat.completions.create(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\openai\_utils\_utils.py", line 301, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\openai\resources\chat\completions.py", line 598, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 1096, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 856, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 894, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 966, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 894, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 966, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 908, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\outcast_tremble\Desktop\ai-tools\tlx\backend\main.py", line 172, in generate_slides
+    slides_content = await generate_presentation_content(data["topic"])
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\Desktop\ai-tools\tlx\backend\main.py", line 85, in generate_presentation_content
+    raise HTTPException(status_code=500, detail=f"Error generating content: {str(e)}")
+fastapi.exceptions.HTTPException
+
+2025-01-12 10:01:59,168 - INFO - Received request to generate slides for topic: computer networks
+2025-01-12 10:01:59,169 - INFO - Generating presentation content for topic: computer networks
+2025-01-12 10:01:59,169 - INFO - Making API call to OpenAI
+2025-01-12 10:01:59,471 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-01-12 10:01:59,472 - INFO - Retrying request to /chat/completions in 0.913269 seconds
+2025-01-12 10:02:00,597 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-01-12 10:02:00,599 - INFO - Retrying request to /chat/completions in 1.815210 seconds
+2025-01-12 10:02:02,611 - INFO - HTTP Request: POST https://api.openai.com/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-01-12 10:02:02,614 - ERROR - Error in generate_presentation_content: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+2025-01-12 10:02:02,617 - ERROR - Full traceback: Traceback (most recent call last):
+  File "C:\Users\outcast_tremble\Desktop\ai-tools\tlx\backend\main.py", line 60, in generate_presentation_content
+    response = await asyncio.wait_for(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\Desktop\ai-tools\tlx\backend\main.py", line 63, in <lambda>
+    lambda: client.chat.completions.create(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\openai\_utils\_utils.py", line 301, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\openai\resources\chat\completions.py", line 598, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 1096, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 856, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 894, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 966, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 894, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 966, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 908, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+
+2025-01-12 10:02:02,618 - ERROR - Error in generate_slides endpoint: 
+2025-01-12 10:02:02,620 - ERROR - Full traceback: Traceback (most recent call last):
+  File "C:\Users\outcast_tremble\Desktop\ai-tools\tlx\backend\main.py", line 60, in generate_presentation_content
+    response = await asyncio.wait_for(
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\asyncio\tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "C:\Python312\Lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\Desktop\ai-tools\tlx\backend\main.py", line 63, in <lambda>
+    lambda: client.chat.completions.create(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\openai\_utils\_utils.py", line 301, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\openai\resources\chat\completions.py", line 598, in create
+    return self._post(
+           ^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 1096, in post
+    return cast(ResponseT, self.request(cast_to, opts, stream=stream, stream_cls=stream_cls))
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 856, in request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 894, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 966, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 894, in _request
+    return self._retry_request(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 966, in _retry_request
+    return self._request(
+           ^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\openai\_base_client.py", line 908, in _request
+    raise self._make_status_error_from_response(err.response) from None
+openai.RateLimitError: Error code: 429 - {'error': {'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, read the docs: https://platform.openai.com/docs/guides/error-codes/api-errors.', 'type': 'insufficient_quota', 'param': None, 'code': 'insufficient_quota'}}
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\outcast_tremble\Desktop\ai-tools\tlx\backend\main.py", line 172, in generate_slides
+    slides_content = await generate_presentation_content(data["topic"])
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\Desktop\ai-tools\tlx\backend\main.py", line 85, in generate_presentation_content
+    raise HTTPException(status_code=500, detail=f"Error generating content: {str(e)}")
+fastapi.exceptions.HTTPException
+
+2025-01-12 10:07:26,803 - INFO - Received request to generate slides for topic: computer networks
+2025-01-12 10:07:26,803 - INFO - Generating presentation content for topic: computer networks
+2025-01-12 10:07:26,803 - INFO - Making API call to Google Gemini
+2025-01-12 10:07:31,863 - ERROR - Error in generate_presentation_content: Expecting value: line 1 column 1 (char 0)
+2025-01-12 10:07:31,865 - ERROR - Full traceback: Traceback (most recent call last):
+  File "C:\Users\outcast_tremble\Desktop\ai-tools\tlx\backend\main.py", line 79, in generate_presentation_content
+    content = json.loads(content_str)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+2025-01-12 10:07:31,866 - ERROR - Error in generate_slides endpoint: 500: Error generating content: Expecting value: line 1 column 1 (char 0)
+2025-01-12 10:07:31,866 - ERROR - Full traceback: Traceback (most recent call last):
+  File "C:\Users\outcast_tremble\Desktop\ai-tools\tlx\backend\main.py", line 79, in generate_presentation_content
+    content = json.loads(content_str)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\outcast_tremble\Desktop\ai-tools\tlx\backend\main.py", line 173, in generate_slides
+    slides_content = await generate_presentation_content(data["topic"])
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\Desktop\ai-tools\tlx\backend\main.py", line 86, in generate_presentation_content
+    raise HTTPException(status_code=500, detail=f"Error generating content: {str(e)}")
+fastapi.exceptions.HTTPException: 500: Error generating content: Expecting value: line 1 column 1 (char 0)
+
+2025-01-12 10:09:11,231 - INFO - Received request to generate slides for topic: computer networks
+2025-01-12 10:09:11,231 - INFO - Generating presentation content for topic: computer networks
+2025-01-12 10:09:11,231 - INFO - Making API call to Google Gemini
+2025-01-12 10:09:15,666 - ERROR - Error in generate_presentation_content: Expecting value: line 1 column 1 (char 0)
+2025-01-12 10:09:15,667 - ERROR - Full traceback: Traceback (most recent call last):
+  File "C:\Users\outcast_tremble\Desktop\ai-tools\tlx\backend\main.py", line 79, in generate_presentation_content
+    temperature=0.3,
+  File "C:\Python312\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+2025-01-12 10:09:15,667 - ERROR - Error in generate_slides endpoint: 500: Error generating content: Expecting value: line 1 column 1 (char 0)
+2025-01-12 10:09:15,668 - ERROR - Full traceback: Traceback (most recent call last):
+  File "C:\Users\outcast_tremble\Desktop\ai-tools\tlx\backend\main.py", line 79, in generate_presentation_content
+    temperature=0.3,
+  File "C:\Python312\Lib\json\__init__.py", line 346, in loads
+    return _default_decoder.decode(s)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\outcast_tremble\Desktop\ai-tools\tlx\backend\main.py", line 173, in generate_slides
+    content_frame.text = ""  # Clear default text
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\Desktop\ai-tools\tlx\backend\main.py", line 86, in generate_presentation_content
+    )
+fastapi.exceptions.HTTPException: 500: Error generating content: Expecting value: line 1 column 1 (char 0)
+
+2025-01-12 10:09:31,578 - INFO - Received request to generate slides for topic: computer networks
+2025-01-12 10:09:31,580 - INFO - Generating presentation content for topic: computer networks
+2025-01-12 10:09:31,580 - INFO - Making API call to Google Gemini
+2025-01-12 10:09:36,700 - INFO - Raw response from Gemini: [
+    {
+        "title": "Computer Networks",
+        "subtitle": "An Introduction",
+        "content": "• Definition of a computer network\n• Types of computer networks\n• Benefits of using computer networks"
+    },
+    {
+        "title": "Overview",
+        "subtitle": "Components and Architecture",
+        "content": "• Network devices (e.g., routers, switches, modems)\n• Network topologies (e.g., bus, star, ring)\n• Network protocols (e.g., TCP/IP, HTTP)"
+    },
+    {
+        "title": "Key Points",
+        "subtitle": "Advantages and Disadvantages",
+        "content": "• Advantages of computer networks (e.g., resource sharing, communication, collaboration)\n• Disadvantages of computer networks (e.g., security risks, performance issues)"
+    },
+    {
+        "title": "Applications",
+        "subtitle": "Real-World Examples",
+        "content": "• File sharing and storage\n• Email and instant messaging\n• Online gaming and entertainment\n• E-commerce and online banking"
+    },
+    {
+        "title": "Conclusion",
+        "subtitle": "Future Trends",
+        "content": "• Importance of computer networks in modern society\n• Emerging trends in networking (e.g., cloud computing, Internet of Things)\n• Future challenges and opportunities"
+    }
+]
+2025-01-12 10:09:36,700 - INFO - Successfully parsed JSON content
+2025-01-12 10:09:36,700 - INFO - Content generation completed
+2025-01-12 10:09:36,700 - INFO - Starting PowerPoint creation
+2025-01-12 10:09:36,711 - INFO - Creating slide 1
+2025-01-12 10:09:36,715 - INFO - Creating slide 2
+2025-01-12 10:09:36,717 - INFO - Creating slide 3
+2025-01-12 10:09:36,718 - INFO - Creating slide 4
+2025-01-12 10:09:36,721 - INFO - Creating slide 5
+2025-01-12 10:09:36,732 - INFO - Successfully created PowerPoint presentation
+2025-01-12 10:09:36,732 - INFO - PowerPoint creation completed
+2025-01-12 10:09:36,732 - INFO - Sending response to client
+2025-01-12 10:10:30,817 - INFO - Received request to generate slides for topic: computer networks
+2025-01-12 10:10:30,817 - INFO - Generating presentation content for topic: computer networks
+2025-01-12 10:10:30,817 - INFO - Making API call to Google Gemini
+2025-01-12 10:10:33,823 - INFO - Raw response from Gemini: [
+    {
+        "title": "Computer Networks",
+        "subtitle": "An Introduction",
+        "content": "• Definition of a computer network\n• Types of computer networks"
+    },
+    {
+        "title": "Overview",
+        "content": "• Components of a computer network\n• Network topologies"
+    },
+    {
+        "title": "Key Points",
+        "content": "• Benefits of using computer networks\n• Challenges of managing computer networks"
+    },
+    {
+        "title": "Applications",
+        "content": "• File sharing\n• Email\n• Web browsing"
+    },
+    {
+        "title": "Conclusion",
+        "content": "• Summary of key points\n• Future of computer networks"
+    }
+]
+2025-01-12 10:10:33,823 - INFO - Successfully parsed JSON content
+2025-01-12 10:10:33,824 - INFO - Content generation completed
+2025-01-12 10:10:33,824 - INFO - Starting PowerPoint creation
+2025-01-12 10:10:33,828 - INFO - Creating slide 1
+2025-01-12 10:10:33,832 - INFO - Creating slide 2
+2025-01-12 10:10:33,834 - INFO - Creating slide 3
+2025-01-12 10:10:33,836 - INFO - Creating slide 4
+2025-01-12 10:10:33,837 - INFO - Creating slide 5
+2025-01-12 10:10:33,850 - INFO - Successfully created PowerPoint presentation
+2025-01-12 10:10:33,851 - INFO - PowerPoint creation completed
+2025-01-12 10:10:33,851 - INFO - Sending response to client
+2025-01-12 10:14:36,776 - INFO - Received request to generate slides for topic: computer networks
+2025-01-12 10:14:36,776 - INFO - Generating presentation content for topic: computer networks
+2025-01-12 10:14:36,776 - INFO - Making API call to Google Gemini
+2025-01-12 10:14:40,435 - INFO - Raw response from Gemini: [
+  {
+    "title": "Computer Networks",
+    "subtitle": "An Overview",
+    "content": "• Definition of a computer network\n• Benefits of using computer networks"
+  },
+  {
+    "title": "Types of Computer Networks",
+    "content": "• LAN (Local Area Network)\n• MAN (Metropolitan Area Network)\n• WAN (Wide Area Network)\n• PAN (Personal Area Network)"
+  },
+  {
+    "title": "Network Topologies",
+    "content": "• Bus topology\n• Ring topology\n• Star topology\n• Mesh topology"
+  },
+  {
+    "title": "Network Protocols",
+    "content": "• TCP/IP (Transmission Control Protocol/Internet Protocol)\n• UDP (User Datagram Protocol)\n• HTTP (Hypertext Transfer Protocol)\n• FTP (File Transfer Protocol)"
+  },
+  {
+    "title": "Conclusion",
+    "content": "• Importance of computer networks\n• Future of computer networks"
+  }
+]
+2025-01-12 10:14:40,435 - INFO - Successfully parsed JSON content
+2025-01-12 10:14:40,435 - INFO - Content generation completed
+2025-01-12 10:14:40,436 - INFO - Starting PowerPoint creation
+2025-01-12 10:14:40,440 - INFO - Creating slide 1
+2025-01-12 10:14:40,443 - INFO - Creating slide 2
+2025-01-12 10:14:40,445 - INFO - Creating slide 3
+2025-01-12 10:14:40,447 - INFO - Creating slide 4
+2025-01-12 10:14:40,448 - INFO - Creating slide 5
+2025-01-12 10:14:40,452 - ERROR - Error in create_presentation: [Errno 13] Permission denied: 'generated_presentation.pptx'
+2025-01-12 10:14:40,457 - ERROR - Full traceback: Traceback (most recent call last):
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\pptx\opc\serialized.py", line 81, in _write
+    self._write_content_types_stream(phys_writer)
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\pptx\opc\serialized.py", line 91, in _write_content_types_stream
+    phys_writer.write(
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\pptx\opc\serialized.py", line 220, in write
+    self._zipf.writestr(pack_uri.membername, blob)
+    ^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\pptx\util.py", line 215, in __get__
+    value = self._fget(obj)
+            ^^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\pptx\opc\serialized.py", line 225, in _zipf
+    return zipfile.ZipFile(self._pkg_file, "w", compression=zipfile.ZIP_DEFLATED)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\zipfile\__init__.py", line 1331, in __init__
+    self.fp = io.open(file, filemode)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'generated_presentation.pptx'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\outcast_tremble\Desktop\ai-tools\tlx\backend\main.py", line 186, in create_presentation
+    prs.save(output_path)
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\pptx\presentation.py", line 39, in save
+    self.part.save(file)
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\pptx\parts\presentation.py", line 107, in save
+    self.package.save(path_or_stream)
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\pptx\opc\package.py", line 153, in save
+    PackageWriter.write(pkg_file, self._rels, tuple(self.iter_parts()))
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\pptx\opc\serialized.py", line 76, in write
+    cls(pkg_file, pkg_rels, parts)._write()
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\pptx\opc\serialized.py", line 80, in _write
+    with _PhysPkgWriter.factory(self._pkg_file) as phys_writer:
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\pptx\opc\serialized.py", line 216, in __exit__
+    self._zipf.close()
+    ^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\pptx\util.py", line 215, in __get__
+    value = self._fget(obj)
+            ^^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\pptx\opc\serialized.py", line 225, in _zipf
+    return zipfile.ZipFile(self._pkg_file, "w", compression=zipfile.ZIP_DEFLATED)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\zipfile\__init__.py", line 1331, in __init__
+    self.fp = io.open(file, filemode)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'generated_presentation.pptx'
+
+2025-01-12 10:14:40,459 - ERROR - Error in generate_slides endpoint: 500: Error creating presentation: [Errno 13] Permission denied: 'generated_presentation.pptx'
+2025-01-12 10:14:40,460 - ERROR - Full traceback: Traceback (most recent call last):
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\pptx\opc\serialized.py", line 81, in _write
+    self._write_content_types_stream(phys_writer)
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\pptx\opc\serialized.py", line 91, in _write_content_types_stream
+    phys_writer.write(
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\pptx\opc\serialized.py", line 220, in write
+    self._zipf.writestr(pack_uri.membername, blob)
+    ^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\pptx\util.py", line 215, in __get__
+    value = self._fget(obj)
+            ^^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\pptx\opc\serialized.py", line 225, in _zipf
+    return zipfile.ZipFile(self._pkg_file, "w", compression=zipfile.ZIP_DEFLATED)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\zipfile\__init__.py", line 1331, in __init__
+    self.fp = io.open(file, filemode)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'generated_presentation.pptx'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\outcast_tremble\Desktop\ai-tools\tlx\backend\main.py", line 186, in create_presentation
+    prs.save(output_path)
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\pptx\presentation.py", line 39, in save
+    self.part.save(file)
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\pptx\parts\presentation.py", line 107, in save
+    self.package.save(path_or_stream)
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\pptx\opc\package.py", line 153, in save
+    PackageWriter.write(pkg_file, self._rels, tuple(self.iter_parts()))
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\pptx\opc\serialized.py", line 76, in write
+    cls(pkg_file, pkg_rels, parts)._write()
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\pptx\opc\serialized.py", line 80, in _write
+    with _PhysPkgWriter.factory(self._pkg_file) as phys_writer:
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\pptx\opc\serialized.py", line 216, in __exit__
+    self._zipf.close()
+    ^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\pptx\util.py", line 215, in __get__
+    value = self._fget(obj)
+            ^^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\AppData\Roaming\Python\Python312\site-packages\pptx\opc\serialized.py", line 225, in _zipf
+    return zipfile.ZipFile(self._pkg_file, "w", compression=zipfile.ZIP_DEFLATED)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Python312\Lib\zipfile\__init__.py", line 1331, in __init__
+    self.fp = io.open(file, filemode)
+              ^^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'generated_presentation.pptx'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\outcast_tremble\Desktop\ai-tools\tlx\backend\main.py", line 210, in generate_slides
+    output_path = create_presentation(slides_content)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\Desktop\ai-tools\tlx\backend\main.py", line 193, in create_presentation
+    raise HTTPException(status_code=500, detail=f"Error creating presentation: {str(e)}")
+fastapi.exceptions.HTTPException: 500: Error creating presentation: [Errno 13] Permission denied: 'generated_presentation.pptx'
+
+2025-01-12 10:15:03,626 - INFO - Received request to generate slides for topic: computer networks
+2025-01-12 10:15:03,626 - INFO - Generating presentation content for topic: computer networks
+2025-01-12 10:15:03,627 - INFO - Making API call to Google Gemini
+2025-01-12 10:15:07,149 - INFO - Raw response from Gemini: [
+    {
+        "title": "Computer Networks",
+        "subtitle": "An Introduction",
+        "content": "• Definition and purpose of computer networks\n• Types of computer networks"
+    },
+    {
+        "title": "Overview",
+        "content": "• Components of a computer network\n• Network topologies\n• Network protocols"
+    },
+    {
+        "title": "Key Points",
+        "content": "• Benefits of computer networks\n• Challenges and limitations of computer networks"
+    },
+    {
+        "title": "Applications",
+        "content": "• File sharing and collaboration\n• Communication and messaging\n• Gaming and entertainment"
+    },
+    {
+        "title": "Conclusion",
+        "content": "• Summary of key points\n• Future trends in computer networks"
+    }
+]
+2025-01-12 10:15:07,149 - INFO - Successfully parsed JSON content
+2025-01-12 10:15:07,149 - INFO - Content generation completed
+2025-01-12 10:15:07,150 - INFO - Starting PowerPoint creation
+2025-01-12 10:15:07,154 - INFO - Creating slide 1
+2025-01-12 10:15:07,157 - INFO - Creating slide 2
+2025-01-12 10:15:07,158 - INFO - Creating slide 3
+2025-01-12 10:15:07,160 - INFO - Creating slide 4
+2025-01-12 10:15:07,162 - INFO - Creating slide 5
+2025-01-12 10:15:07,175 - INFO - Successfully created PowerPoint presentation
+2025-01-12 10:15:07,175 - INFO - PowerPoint creation completed
+2025-01-12 10:15:07,176 - INFO - Sending response to client
+2025-01-12 10:15:48,794 - INFO - Received request to generate slides for topic: computer networks
+2025-01-12 10:15:48,794 - INFO - Generating presentation content for topic: computer networks
+2025-01-12 10:15:48,794 - INFO - Making API call to Google Gemini
+2025-01-12 10:15:52,326 - INFO - Raw response from Gemini: [
+  {
+    "title": "Computer Networks",
+    "subtitle": "An Introduction",
+    "content": "• Definition of a computer network\n• Importance and benefits of computer networks"
+  },
+  {
+    "title": "Overview of Network Components",
+    "content": "• Types of networks (LAN, WAN, MAN)\n• Network devices (routers, switches, hubs)\n• Network media (wired, wireless)"
+  },
+  {
+    "title": "Key Points of Network Protocols",
+    "content": "• TCP/IP protocol suite\n• OSI model\n• Network addressing (IP addresses, MAC addresses)"
+  },
+  {
+    "title": "Network Security",
+    "content": "• Types of network threats\n• Network security measures (firewalls, intrusion detection systems)\n• Best practices for network security"
+  },
+  {
+    "title": "Conclusion",
+    "content": "• Summary of key concepts\n• Future trends in computer networks"
+  }
+]
+2025-01-12 10:15:52,326 - INFO - Successfully parsed JSON content
+2025-01-12 10:15:52,326 - INFO - Content generation completed
+2025-01-12 10:15:52,327 - INFO - Starting PowerPoint creation
+2025-01-12 10:15:52,330 - INFO - Creating slide 1
+2025-01-12 10:15:52,333 - INFO - Creating slide 2
+2025-01-12 10:15:52,336 - INFO - Creating slide 3
+2025-01-12 10:15:52,340 - INFO - Creating slide 4
+2025-01-12 10:15:52,342 - INFO - Creating slide 5
+2025-01-12 10:15:52,356 - INFO - Successfully created PowerPoint presentation
+2025-01-12 10:15:52,356 - INFO - PowerPoint creation completed
+2025-01-12 10:15:52,356 - INFO - Sending response to client
+2025-01-12 10:20:24,652 - INFO - Received request to generate slides for topic: Computer networks
+2025-01-12 10:20:24,652 - INFO - Generating presentation content for topic: Computer networks
+2025-01-12 10:20:24,652 - INFO - Making API call to Google Gemini
+2025-01-12 10:20:28,560 - INFO - Raw response from Gemini: [
+  {
+    "title": "Computer Networks",
+    "subtitle": "An Introduction",
+    "content": "• Definition of a computer network\n• Types of computer networks\n• Benefits of using computer networks"
+  },
+  {
+    "title": "Overview of Computer Networks",
+    "content": "• Network topologies\n• Network protocols\n• Network devices"
+  },
+  {
+    "title": "Key Points",
+    "content": "• Importance of computer networks in modern society\n• Challenges and opportunities in computer networking"
+  },
+  {
+    "title": "Applications of Computer Networks",
+    "content": "• File sharing and collaboration\n• Communication and social networking\n• E-commerce and online banking"
+  },
+  {
+    "title": "Conclusion",
+    "content": "• Summary of the key points\n• Future trends in computer networking"
+  }
+]
+2025-01-12 10:20:28,560 - INFO - Successfully parsed JSON content
+2025-01-12 10:20:28,561 - INFO - Content generation completed
+2025-01-12 10:20:28,561 - INFO - Starting PowerPoint creation
+2025-01-12 10:20:28,566 - INFO - Creating slide 1
+2025-01-12 10:20:28,569 - INFO - Creating slide 2
+2025-01-12 10:20:28,571 - INFO - Creating slide 3
+2025-01-12 10:20:28,573 - INFO - Creating slide 4
+2025-01-12 10:20:28,574 - INFO - Creating slide 5
+2025-01-12 10:20:28,588 - INFO - Successfully created PowerPoint presentation
+2025-01-12 10:20:28,588 - INFO - PowerPoint creation completed
+2025-01-12 10:20:28,589 - INFO - Sending response to client
+2025-01-12 10:20:52,704 - INFO - Received request to generate slides for topic: Ai tools
+2025-01-12 10:20:52,704 - INFO - Generating presentation content for topic: Ai tools
+2025-01-12 10:20:52,704 - INFO - Making API call to Google Gemini
+2025-01-12 10:20:56,945 - INFO - Raw response from Gemini: [
+  {
+    "title": "Artificial Intelligence Tools",
+    "subtitle": "A Comprehensive Overview",
+    "content": "• Definition and types of AI tools\n• Benefits and applications of AI tools"
+  },
+  {
+    "title": "Overview of AI Tools",
+    "subtitle": "Types and Capabilities",
+    "content": "• Machine learning and deep learning\n• Natural language processing\n• Computer vision\n• Robotics"
+  },
+  {
+    "title": "Key Points",
+    "subtitle": "Benefits and Applications",
+    "content": "• Improved efficiency and productivity\n• Enhanced decision-making\n• Personalized experiences\n• Automation of repetitive tasks"
+  },
+  {
+    "title": "Applications of AI Tools",
+    "subtitle": "Across Industries",
+    "content": "• Healthcare: Diagnosis, treatment planning\n• Finance: Fraud detection, risk assessment\n• Manufacturing: Predictive maintenance, quality control\n• Retail: Personalized recommendations, inventory management"
+  },
+  {
+    "title": "Conclusion",
+    "subtitle": "The Future of AI Tools",
+    "content": "• Continued advancements and integration\n• Ethical considerations and responsible use\n• Transformative impact on society and businesses"
+  }
+]
+2025-01-12 10:20:56,946 - INFO - Successfully parsed JSON content
+2025-01-12 10:20:56,946 - INFO - Content generation completed
+2025-01-12 10:20:56,947 - INFO - Starting PowerPoint creation
+2025-01-12 10:20:56,951 - INFO - Creating slide 1
+2025-01-12 10:20:56,953 - INFO - Creating slide 2
+2025-01-12 10:20:56,955 - INFO - Creating slide 3
+2025-01-12 10:20:56,957 - INFO - Creating slide 4
+2025-01-12 10:20:56,959 - INFO - Creating slide 5
+2025-01-12 10:20:56,972 - INFO - Successfully created PowerPoint presentation
+2025-01-12 10:20:56,972 - INFO - PowerPoint creation completed
+2025-01-12 10:20:56,972 - INFO - Sending response to client
+2025-01-12 10:28:05,386 - INFO - Received request to generate slides for topic: Ai tools
+2025-01-12 10:28:05,387 - INFO - Generating presentation content for topic: Ai tools
+2025-01-12 10:28:05,387 - INFO - Making API call to Google Gemini
+2025-01-12 10:28:10,384 - INFO - Raw response from Gemini: [
+  {
+    "title": "Introduction to AI Tools",
+    "subtitle": "Unlocking the Power of Artificial Intelligence",
+    "content": "• Definition and types of AI tools\n• Benefits of using AI tools"
+  },
+  {
+    "title": "Overview of AI Tools",
+    "subtitle": "Exploring the AI Landscape",
+    "content": "• Natural Language Processing (NLP)\n• Machine Learning (ML)\n• Computer Vision\n• Robotics"
+  },
+  {
+    "title": "Key Points",
+    "subtitle": "Essential Considerations",
+    "content": "• Data quality and availability\n• Model selection and training\n• Ethical and societal implications"
+  },
+  {
+    "title": "Applications of AI Tools",
+    "subtitle": "Transforming Industries",
+    "content": "• Healthcare: Diagnosis, treatment, and drug discovery\n• Finance: Fraud detection, risk assessment, and investment analysis\n• Manufacturing: Predictive maintenance, quality control, and supply chain optimization"
+  },
+  {
+    "title": "Conclusion",
+    "subtitle": "The Future of AI Tools",
+    "content": "• Ongoing advancements and emerging trends\n• Importance of responsible and ethical use\n• AI's potential to revolutionize various aspects of life"
+  }
+]
+2025-01-12 10:28:10,384 - INFO - Successfully parsed JSON content
+2025-01-12 10:28:10,384 - INFO - Content generation completed
+2025-01-12 10:28:10,384 - INFO - Starting PowerPoint creation
+2025-01-12 10:28:10,388 - INFO - Creating slide 1
+2025-01-12 10:28:10,391 - INFO - Creating slide 2
+2025-01-12 10:28:10,393 - INFO - Creating slide 3
+2025-01-12 10:28:10,395 - INFO - Creating slide 4
+2025-01-12 10:28:10,398 - INFO - Creating slide 5
+2025-01-12 10:28:10,407 - INFO - Successfully created PowerPoint presentation
+2025-01-12 10:28:10,407 - INFO - PowerPoint creation completed
+2025-01-12 10:28:10,408 - INFO - Sending response to client
+2025-01-12 10:32:08,348 - INFO - Received request to generate slides for topic: Ai tools
+2025-01-12 10:32:08,348 - INFO - Generating presentation content for topic: Ai tools
+2025-01-12 10:32:08,348 - INFO - Making API call to Google Gemini
+2025-01-12 10:32:12,587 - INFO - Raw response from Gemini: [
+  {
+    "title": "Introduction to AI Tools",
+    "subtitle": "Unlocking the Power of Artificial Intelligence",
+    "content": "• Definition of AI tools\n• Benefits of using AI tools"
+  },
+  {
+    "title": "Overview of AI Tools",
+    "subtitle": "Exploring the AI Landscape",
+    "content": "• Types of AI tools\n• Applications of AI tools across industries"
+  },
+  {
+    "title": "Key Points for Effective AI Tool Implementation",
+    "subtitle": "Best Practices for Success",
+    "content": "• Data quality and preparation\n• Model selection and training\n• Deployment and monitoring"
+  },
+  {
+    "title": "Case Studies: AI Tools in Action",
+    "subtitle": "Real-World Examples of AI Success",
+    "content": "• Example 1: AI-powered customer service\n• Example 2: AI-driven fraud detection"
+  },
+  {
+    "title": "Conclusion: The Future of AI Tools",
+    "subtitle": "Embracing the Transformative Potential",
+    "content": "• Summary of key points\n• Future trends and advancements in AI tools"
+  }
+]
+2025-01-12 10:32:12,587 - INFO - Successfully parsed JSON content
+2025-01-12 10:32:12,588 - INFO - Content generation completed
+2025-01-12 10:32:12,588 - INFO - Starting PowerPoint creation
+2025-01-12 10:32:12,593 - INFO - Creating slide 1
+2025-01-12 10:32:12,597 - ERROR - Error in create_presentation: 'SlideShapes' object has no attribute 'subtitle'
+2025-01-12 10:32:12,600 - ERROR - Full traceback: Traceback (most recent call last):
+  File "C:\Users\outcast_tremble\Desktop\ai-tools\tlx\backend\main.py", line 168, in create_presentation
+    slide = prs.slides.add_slide(slide_layout)
+                   ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SlideShapes' object has no attribute 'subtitle'
+
+2025-01-12 10:32:12,600 - ERROR - Error in generate_slides endpoint: 500: Error creating presentation: 'SlideShapes' object has no attribute 'subtitle'
+2025-01-12 10:32:12,601 - ERROR - Full traceback: Traceback (most recent call last):
+  File "C:\Users\outcast_tremble\Desktop\ai-tools\tlx\backend\main.py", line 168, in create_presentation
+    slide = prs.slides.add_slide(slide_layout)
+                   ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SlideShapes' object has no attribute 'subtitle'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\outcast_tremble\Desktop\ai-tools\tlx\backend\main.py", line 281, in generate_slides
+  File "C:\Users\outcast_tremble\Desktop\ai-tools\tlx\backend\main.py", line 264, in create_presentation
+    p.text = bullet.strip()
+fastapi.exceptions.HTTPException: 500: Error creating presentation: 'SlideShapes' object has no attribute 'subtitle'
+
+2025-01-12 10:32:43,162 - INFO - Received request to generate slides for topic: Ai tools
+2025-01-12 10:32:43,162 - INFO - Generating presentation content for topic: Ai tools
+2025-01-12 10:32:43,163 - INFO - Making API call to Google Gemini
+2025-01-12 10:32:49,295 - INFO - Raw response from Gemini: [
+    {
+        "title": "What are AI Tools?",
+        "subtitle": "Introduction",
+        "content": "• AI tools are computer programs that can perform tasks that normally require human intelligence.\n• They are used in a wide variety of applications, from self-driving cars to medical diagnosis."
+    },
+    {
+        "title": "Let's Get Started!",
+        "subtitle": "Starter Activity",
+        "content": "• Think-Pair-Share Activity:\n• Question: What do you think of when you hear the term \"AI tools\"?\n• Take 2 minutes to think\n• Discuss with your partner\n• Share with the class"
+    },
+    {
+        "title": "Main Content",
+        "subtitle": "Understanding AI Tools",
+        "content": "• AI tools use algorithms to learn from data and make predictions.\n• There are many different types of AI tools, each with its own strengths and weaknesses.\n• Knowledge Check: What is the difference between supervised and unsupervised learning?"
+    },
+    {
+        "title": "Exploring Further",
+        "subtitle": "Real-world Applications",
+        "content": "• AI tools are used in a wide variety of industries, including healthcare, finance, and manufacturing.\n• For example, AI tools can be used to diagnose diseases, predict customer behavior, and optimize supply chains.\n• Knowledge Check: Can you think of a specific example of how AI tools are used in your everyday life?"
+    },
+    {
+        "title": "Plenary",
+        "subtitle": "Let's Review",
+        "content": "• What have we learned today?\n• Key takeaways:\n  - AI tools are computer programs that can perform tasks that normally require human intelligence.\n  - AI tools use algorithms to learn from data and make predictions.\n• Exit Ticket: Write one sentence summarizing what you learned about AI tools today."
+    }
+]
+2025-01-12 10:32:49,295 - INFO - Successfully parsed JSON content
+2025-01-12 10:32:49,295 - INFO - Content generation completed
+2025-01-12 10:32:49,296 - INFO - Starting PowerPoint creation
+2025-01-12 10:32:49,301 - INFO - Creating slide 1
+2025-01-12 10:32:49,304 - ERROR - Error in create_presentation: 'SlideShapes' object has no attribute 'subtitle'
+2025-01-12 10:32:49,305 - ERROR - Full traceback: Traceback (most recent call last):
+  File "C:\Users\outcast_tremble\Desktop\ai-tools\tlx\backend\main.py", line 193, in create_presentation
+    subtitle = slide.shapes.subtitle
+               ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SlideShapes' object has no attribute 'subtitle'
+
+2025-01-12 10:32:49,305 - ERROR - Error in generate_slides endpoint: 500: Error creating presentation: 'SlideShapes' object has no attribute 'subtitle'
+2025-01-12 10:32:49,308 - ERROR - Full traceback: Traceback (most recent call last):
+  File "C:\Users\outcast_tremble\Desktop\ai-tools\tlx\backend\main.py", line 193, in create_presentation
+    subtitle = slide.shapes.subtitle
+               ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SlideShapes' object has no attribute 'subtitle'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\outcast_tremble\Desktop\ai-tools\tlx\backend\main.py", line 319, in generate_slides
+    output_path = create_presentation(slides_content)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\Desktop\ai-tools\tlx\backend\main.py", line 302, in create_presentation
+    raise HTTPException(status_code=500, detail=f"Error creating presentation: {str(e)}")
+fastapi.exceptions.HTTPException: 500: Error creating presentation: 'SlideShapes' object has no attribute 'subtitle'
+
+2025-01-12 10:35:38,105 - INFO - Received request to generate slides for topic: Computer networks
+2025-01-12 10:35:38,105 - INFO - Generating presentation content for topic: Computer networks
+2025-01-12 10:35:38,105 - INFO - Making API call to Google Gemini
+2025-01-12 10:35:44,398 - INFO - Raw response from Gemini: [
+    {
+        "title": "Computer Networks",
+        "subtitle": "An Introduction",
+        "content": "• A computer network is a group of computers and devices connected together.\n• Networks allow computers to share resources, such as files, printers, and internet access."
+    },
+    {
+        "title": "Let's Get Started!",
+        "subtitle": "Starter Activity",
+        "content": "• Think-Pair-Share Activity:\n• Question: What are the benefits of using computer networks?\n• Take 2 minutes to think\n• Discuss with your partner\n• Share with the class"
+    },
+    {
+        "title": "Main Content",
+        "subtitle": "Understanding Network Components",
+        "content": "• **Nodes:** Computers and devices connected to the network.\n• **Links:** Cables or wireless connections that connect the nodes.\n• **Network Interface Card (NIC):** Hardware that connects each node to the network.\n• Knowledge Check: What is the role of a NIC?"
+    },
+    {
+        "title": "Exploring Further",
+        "subtitle": "Types of Networks",
+        "content": "• **Local Area Network (LAN):** Connects devices within a small area, such as a home or office.\n• **Wide Area Network (WAN):** Connects devices over a larger geographical area, such as a city or country.\n• Knowledge Check: What is the difference between a LAN and a WAN?"
+    },
+    {
+        "title": "Plenary",
+        "subtitle": "Let's Review",
+        "content": "• What have we learned today?\n• Key takeaways:\n  - Computer networks connect computers and devices to share resources.\n  - Networks consist of nodes, links, and NICs.\n• Exit Ticket: Describe one benefit of using a computer network."
+    }
+]
+2025-01-12 10:35:44,398 - INFO - Successfully parsed JSON content
+2025-01-12 10:35:44,398 - INFO - Content generation completed
+2025-01-12 10:35:44,398 - INFO - Starting PowerPoint creation
+2025-01-12 10:35:44,404 - INFO - Creating slide 1
+2025-01-12 10:35:44,407 - ERROR - Error in create_presentation: 'SlideShapes' object has no attribute 'subtitle'
+2025-01-12 10:35:44,409 - ERROR - Full traceback: Traceback (most recent call last):
+  File "C:\Users\outcast_tremble\Desktop\ai-tools\tlx\backend\main.py", line 193, in create_presentation
+    subtitle = slide.shapes.subtitle
+               ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SlideShapes' object has no attribute 'subtitle'
+
+2025-01-12 10:35:44,409 - ERROR - Error in generate_slides endpoint: 500: Error creating presentation: 'SlideShapes' object has no attribute 'subtitle'
+2025-01-12 10:35:44,410 - ERROR - Full traceback: Traceback (most recent call last):
+  File "C:\Users\outcast_tremble\Desktop\ai-tools\tlx\backend\main.py", line 193, in create_presentation
+    subtitle = slide.shapes.subtitle
+               ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'SlideShapes' object has no attribute 'subtitle'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\outcast_tremble\Desktop\ai-tools\tlx\backend\main.py", line 319, in generate_slides
+    output_path = create_presentation(slides_content)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\outcast_tremble\Desktop\ai-tools\tlx\backend\main.py", line 302, in create_presentation
+    raise HTTPException(status_code=500, detail=f"Error creating presentation: {str(e)}")
+fastapi.exceptions.HTTPException: 500: Error creating presentation: 'SlideShapes' object has no attribute 'subtitle'
+
+2025-01-12 10:40:04,051 - INFO - Received request to generate slides for topic: Computer networks
+2025-01-12 10:40:04,052 - INFO - Generating presentation content for topic: Computer networks
+2025-01-12 10:40:04,052 - INFO - Making API call to Google Gemini
+2025-01-12 10:40:09,734 - INFO - Raw response from Gemini: [
+  {
+    "title": "What are Computer Networks?",
+    "subtitle": "Introduction",
+    "content": "• Networks connect computers and other devices\n• Allow them to share data and resources"
+  },
+  {
+    "title": "Let's Get Started!",
+    "subtitle": "Starter Activity",
+    "content": "• Think-Pair-Share Activity:\n• Question: How do you think computer networks are used in our daily lives?\n• Take 2 minutes to think\n• Discuss with your partner\n• Share with the class"
+  },
+  {
+    "title": "Types of Networks",
+    "subtitle": "Understanding Network Structures",
+    "content": "• Local Area Networks (LANs): Small, private networks\n• Wide Area Networks (WANs): Larger, often public networks\n• Knowledge Check: What is the difference between a LAN and a WAN?"
+  },
+  {
+    "title": "Exploring Further",
+    "subtitle": "Real-world Applications",
+    "content": "• Example 1: The Internet - a global WAN\n• Example 2: School networks - LANs used for sharing resources\n• Knowledge Check: How do computer networks benefit businesses?"
+  },
+  {
+    "title": "Plenary",
+    "subtitle": "Let's Review",
+    "content": "• What have we learned today?\n• Key takeaways:\n  - Computer networks connect devices\n  - There are different types of networks\n• Exit Ticket: List three uses of computer networks"
+  }
+]
+2025-01-12 10:40:09,735 - INFO - Successfully parsed JSON content
+2025-01-12 10:40:09,735 - INFO - Content generation completed
+2025-01-12 10:40:09,735 - INFO - Starting PowerPoint creation
+2025-01-12 10:40:09,741 - INFO - Creating slide 1
+2025-01-12 10:40:09,745 - INFO - Creating slide 2
+2025-01-12 10:40:09,748 - INFO - Creating slide 3
+2025-01-12 10:40:09,751 - INFO - Creating slide 4
+2025-01-12 10:40:09,754 - INFO - Creating slide 5
+2025-01-12 10:40:09,770 - INFO - Successfully created PowerPoint presentation
+2025-01-12 10:40:09,770 - INFO - PowerPoint creation completed
+2025-01-12 10:40:09,770 - INFO - Sending response to client
+2025-01-12 10:49:41,463 - INFO - Received request to generate slides for topic: Cell Division in Biology
+2025-01-12 10:49:41,463 - INFO - Generating presentation content for topic: Cell Division in Biology
+2025-01-12 10:49:41,465 - INFO - Making API call to Google Gemini
+2025-01-12 10:49:47,288 - INFO - Raw response from Gemini: [
+    {
+        "title": "The Importance of Cell Division",
+        "subtitle": "Why Cells Divide",
+        "content": "• Essential for growth and development of organisms\n• Repairs damaged tissues\n• Replaces old or dying cells"
+    },
+    {
+        "title": "Let's Get Started!",
+        "subtitle": "Starter Activity",
+        "content": "• Think-Pair-Share Activity:\n• Question: Why is cell division important for living organisms?\n• Take 2 minutes to think\n• Discuss with your partner\n• Share with the class"
+    },
+    {
+        "title": "Main Content",
+        "subtitle": "Types of Cell Division",
+        "content": "• Mitosis: Cell division that produces two identical daughter cells\n• Meiosis: Cell division that produces four haploid cells\n• Knowledge Check: What is the difference between mitosis and meiosis?"
+    },
+    {
+        "title": "Exploring Further",
+        "subtitle": "Applications of Cell Division",
+        "content": "• Tissue regeneration: Replacement of damaged or lost tissue\n• Cancer treatment: Targeting rapidly dividing cancer cells\n• Knowledge Check: How is cell division used in cancer treatment?"
+    },
+    {
+        "title": "Plenary",
+        "subtitle": "Let's Review",
+        "content": "• What have we learned today?\n• Key takeaways:\n  - Cell division is essential for growth, repair, and replacement\n  - Mitosis produces identical daughter cells, while meiosis produces haploid cells\n• Exit Ticket: Explain the significance of cell division in living organisms"
+    }
+]
+2025-01-12 10:49:47,288 - INFO - Successfully parsed JSON content
+2025-01-12 10:49:47,289 - INFO - Content generation completed
+2025-01-12 10:49:47,289 - INFO - Starting PowerPoint creation
+2025-01-12 10:49:47,293 - INFO - Creating slide 1
+2025-01-12 10:49:47,296 - INFO - Creating slide 2
+2025-01-12 10:49:47,299 - INFO - Creating slide 3
+2025-01-12 10:49:47,304 - INFO - Creating slide 4
+2025-01-12 10:49:47,307 - INFO - Creating slide 5
+2025-01-12 10:49:47,321 - INFO - Successfully created PowerPoint presentation
+2025-01-12 10:49:47,321 - INFO - PowerPoint creation completed
+2025-01-12 10:49:47,321 - INFO - Sending response to client
