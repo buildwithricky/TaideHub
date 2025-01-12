@@ -1,65 +1,101 @@
-# PowerPoint Slide Generator
+# TaideHub AI - Lesson Presentation Generator
 
-This project allows you to generate PowerPoint presentations with AI-generated images using a React frontend and Python backend.
+Transform your teaching ideas into professional presentations instantly with TaideHub AI. Our tool helps educators create engaging, curriculum-aligned lesson presentations with just a topic input.
 
-## Prerequisites
+## 🚀 Features
+
+- **Instant Lesson Planning**
+  - Transform any topic into a complete 5-slide lesson presentation
+  - Built-in starter activities and plenaries
+  - Knowledge check questions throughout
+
+- **Education-Focused Design**
+  - Professional UK curriculum-aligned layouts
+  - Color-coded sections for activities and assessments
+  - Consistent branding and typography
+
+- **Smart Content Generation**
+  - Automatic Think-Pair-Share activities
+  - Differentiated learning points
+  - Built-in assessment opportunities
+  - Exit tickets for lesson closure
+
+## 🛠️ Technical Requirements
 
 - Node.js (v16 or higher)
 - Python (v3.8 or higher)
-- OpenAI API key
+- Google API key with Gemini access
 
-## Setup
+## 📦 Installation
 
-1. Clone the repository
-2. Set up the backend:
+1. **Clone and Setup**
    ```bash
-   # Create a virtual environment (optional but recommended)
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   
-   # Install dependencies
-   pip install -r requirements.txt
-   
-   # Create a .env file and add your OpenAI API key
-   echo "OPENAI_API_KEY=your_api_key_here" > .env
+   # Clone the repository
+   git clone [repository-url]
+   cd [project-directory]
    ```
 
-3. Set up the frontend:
+2. **Backend Setup**
+   ```bash
+   # Create and activate virtual environment
+   python -m venv venv
+   # On Windows:
+   venv\Scripts\activate
+   # On Unix or MacOS:
+   source venv/bin/activate
+
+   # Install dependencies
+   pip install -r requirements.txt
+
+   # Configure environment
+   # Create .env file and add your Google API key
+   echo "GOOGLE_API_KEY=your_google_api_key_here" > .env
+   ```
+
+3. **Frontend Setup**
    ```bash
    cd frontend
    npm install
    ```
 
-## Running the Application
+## 🚀 Running the Application
 
-1. Start the backend server:
+1. **Start Backend Server**
    ```bash
    # From the root directory
-   uvicorn backend.main:app --reload
+   python -m uvicorn backend.main:app --reload
    ```
 
-2. Start the frontend development server:
+2. **Start Frontend Development Server**
    ```bash
    # From the frontend directory
+   cd frontend
    npm run dev
    ```
 
-3. Open your browser and navigate to `http://localhost:3000`
+3. Access the application at `http://localhost:5173`
 
-## Features
+## 💡 How to Use
 
-- Create multiple slides with titles and content
-- Generate relevant images using DALL-E AI
-- Download the generated PowerPoint presentation
-- Modern, responsive UI using Material-UI
+1. Enter your lesson topic in the input field
+2. Click "Generate Lesson Presentation"
+3. Your presentation will include:
+   - Professional title slide
+   - Interactive starter activity
+   - Main content with knowledge checks
+   - Real-world applications
+   - Plenary with exit ticket
+4. Download your PowerPoint presentation
 
-## Usage
+## 🎨 Presentation Structure
 
-1. Add slides using the "Add Slide" button
-2. Fill in the title and content for each slide
-3. Provide an image prompt to generate relevant images using DALL-E
-4. Click "Generate Presentation" to create and download your PowerPoint file
+Each generated presentation follows this structure:
+- **Slide 1:** Title and Introduction
+- **Slide 2:** Starter Activity (Think-Pair-Share)
+- **Slide 3:** Main Content with Knowledge Check
+- **Slide 4:** Real-World Applications
+- **Slide 5:** Plenary Review and Exit Ticket
 
-## Note
+## ⚠️ Important Note
 
-Make sure you have a valid OpenAI API key and sufficient credits for image generation. 
+You'll need a valid Google API key with access to the Gemini model. Get yours from the [Google AI Studio](https://makersuite.google.com/app/apikey). 

@@ -98,7 +98,7 @@ function App() {
               fontSize: { xs: '2.5rem', sm: '3rem', md: '3.5rem' },
               mb: 3
             }}>
-              LessonCraft AI
+              TaideHub AI
             </Typography>
             <Typography variant="h5" color="text.secondary" sx={{ mb: 4 }}>
               Create engaging lesson presentations aligned with UK curriculum standards
